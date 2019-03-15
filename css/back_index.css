@@ -1,0 +1,42 @@
+body {
+	background-color: lightgreen ;
+}
+.navbar {
+	width: 100%;
+}
+span {
+	font-family:仿宋;
+	font-weight:bold;
+	font-size:18px;
+	text-align: center;
+}
+#content {
+	height: 800px;
+}
+#icon {
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+}
+.habbit {
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+}
+#card {
+	width: 400px;
+	height: 400px;
+	margin: 0 auto;
+	background-color: lightcyan ;
+}
+table {
+	width: 400px;
+	height: 400px;
+	text-align: center;
+	border: 1px solid black;
+}
+.footer {
+	width: 100%;
+	text-align: center;
+	background-color: lightsalmon;
+}

@@ -1,0 +1,16 @@
+body {
+	background-color: lightcyan;
+}
+.title{
+	margin: 10px ;
+}
+.head{
+	margin: 20px 20% auto 30%;
+}
+.article{
+	margin: auto 20% auto 20%;
+	background-color: lightgray;
+}
+.muted{
+	font-size: 16;
+}

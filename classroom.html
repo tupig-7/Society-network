@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">  
+        <link rel="stylesheet" href="css/classroom.css">
+        <script src="js/vue.js"></script>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+		<title>占教室</title>
+	</head>
+	<body data-spy="scroll" data-target="#myScrollspy">
+		<div class="head" style="background-color: lightblue;"><center><span class="muted" style="font-family:仿宋;font-weight:bold;font-size:36px"><b>占教室</b></span></center></div>
+		<div class="choose-classroom">
+		<div>
+			<div class='col-xs-11 text-success'>
+				    <hr/>
+			</div>
+			<div class='col-xs-1'>
+			<div class="btn-group">
+				<button type="button" class="btn btn-success btn-lg" data-toggle="dropdown">
+					<span class="glyphicon glyphicon-list">操作</span>
+				</button>
+				<ul class="dropdown-menu" role="menu">
+				 <li role="presentation" class="btn-xs">
+			        <button class="btn btn-info">
+			        	<span class="glyphicon glyphicon-search">查询</span>
+			        </button>       
+			      </li>
+			      <li role="presentation" class="btn-xs">
+			      	<button class="btn btn-info">
+			        	<span class="glyphicon glyphicon-search">空教室</span>
+			        </button>              
+			      </li>
+			      <li role="presentation" class="btn-xs">
+			        <button class="btn btn-info">
+			        	<span class="glyphicon glyphicon-search">非空教室</span>
+			        </button>              
+			      </li>
+				</ul>
+			
+			<select id="building" class="btn-primary btn-lg">
+				<option value="201">201</option>
+				<option value="202">202</option>
+				<option value="203">203</option>
+				<option value="204">204</option>
+				<option value="205">205</option>
+				<option value="206">206</option>
+				<option value="207">207</option>
+			</select>
+			<select id="floor" class="btn-primary btn-lg">
+				<option value="01">01</option>
+				<option value="02">02</option>
+				<option value="03">03</option>
+				<option value="04">04</option>
+				<option value="05">05</option>
+				<option value="06">06</option>
+			</select>
+			<select id="room" class="btn-primary btn-lg">
+				<option value="01">01</option>
+				<option value="02">02</option>
+				<option value="03">03</option>
+				<option value="04">04</option>
+				<option value="05">05</option>
+				<option value="06">06</option>
+			</select>
+			</div>
+			</div>
+		</div>
+		</div>
+		<div id="room-infor" class="container">
+			
+		<div class="container">
+		    <div class="row">
+		        <div class="col-xs-2" id="myScrollspy">
+		            <ul class="nav nav-tabs  nav-stacked" data-spy="affix" data-offset-top="125">
+		                <li class="active"><a href="#B1F1">一号楼</a></li>
+		                <li><a href="#B2F1">二号楼</a></li>
+		                <li><a href="#B3F1">三号楼</a></li>
+		                <li><a href="#B4F1">四号楼</a></li>
+		                <li><a href="#B5F1">五号楼</a></li>
+		                <li><a href="#B6F1">六号楼</a></li>
+		                <li><a href="#B7F1">七号楼</a></li>
+		              </ul>
+		        </div>
+					<div id="room-row" class="col-xs-10">
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			var bs = document.getElementById('building');
+			var fs = document.getElementById('floor');
+			var rs = document.getElementById('room');//获取节点
+			var bo = bs.getElementsByTagName('option');
+			var fo = fs.getElementsByTagName('option');
+			var ro = rs.getElementsByTagName('option');
+			for(var i=0;i<bo.length;i++)
+			  for(var j=0;j<fo.length;j++)
+			  {
+			  	var childdiv = document.createElement('room-row');
+			    childdiv.innerHTML=
+			    "<div class='col-xs-11 text-success'>"+
+				    "<hr/>"+
+				"</div>"+
+				"<div class='col-xs-1'>"+
+				    	"<span class='label label-warning' id='"+"B"+(i+1)+"F"+(j+1)+"'>"+(i+1)+"栋"+(j+1)+"层"+"</span>"+
+				"</div>";
+			    document.getElementById('room-row').appendChild(childdiv);
+			    for(var k=0;k<ro.length;k++)
+			    {
+			    	var classname = bo[i].value+fo[j].value+ro[k].value;
+			    	var childdiv = document.createElement('room-row');
+				    childdiv.innerHTML=
+				    "<div id='room'"+classname+" class='col-xs-2'>"+
+				    	"<a href='#' onclick='getInfor()'><img src='img/classroom.jpg' title='点击查看占用详情'></img></a>"+
+				    	"<div class='caption>"+
+				    	"<p class='text-muted'>&nbsp;&nbsp;#"+classname+"</p>"+
+						"<button class='btn btn-success btn-xs' onclick='takeUp()'>占用</button>&nbsp;"+
+						"<button class='btn btn-danger btn-xs' onclick='endTakeUp()'>结束</button>"+
+						"</div>"+
+					"</div>";
+					document.getElementById('room-row').appendChild(childdiv);
+					//console.log(childdiv.innerHTML);
+				}
+			   }
+			    function takeUp(){
+			    	confirm("确定占用?");
+			    }
+			    function endTakeUp(){
+			    	confirm("确定结束?")
+			    }
+			    function getInfor(){
+			    	alert("经济协会占用了此教室8:00-10:00");
+			    }
+		</script>
+	</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../img/0.ico" rel="shortcut icon" />
+		<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">  
+		<link rel="stylesheet" href="../css/diary.css">
+		<link rel="stylesheet" href="../css/sakura.css">
+        <script src="../js/jquery-3.3.1.min.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
+        <script src="../js/sakura.js"></script>
+		<title>心情日记</title>
+	</head>
+	<body>
+		<!--用于生成下落的五角星-->
+		<div class="cherry">
+		<img id="sakura" src="../img/pentagram.png" alt="" hidden="hidden" >
+		</div>
+		<div class="title"><center><span class="muted" style="font-family:仿宋;font-weight:bold;font-size:24px">观秋赏月</span></center></div>
+		<div class="head">
+			<center style="font-family:宋体;font-weight:bold;font-size:16px">
+			<span>作者:&nbsp;李四&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+			<span>日期:2018/03/28&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+			<span>天气:</span>
+			<span id="weather" value="多云">多云</span>
+			</center>
+		</div>
+		<div id="body"class="container">
+			<div class="row">
+			<div id="left" class="left col-xs-2"></div>
+		<div class="article col-xs-8">
+			<p class="muted" style="font-family:宋体;font-weight:bold;font-size:16px;color:#a57a3f;">初秋的夜晚，有点凉凉的，让人感觉甚是舒服，因为这凉，打去了我一天的倦怠。拉了一下灯的开关，却停电了，便取了蜡烛点着置于案头。就着烛火独坐案头，取了文书翻阅，细细品味着其中的语句，似在与伟大的心灵对话，受益匪浅！偶尔会有初秋的风悄悄的从开着的窗中钻进来串门，轻轻地在我脸上呵几下，凉飕飕的。风调皮的拔弄着烛焰来回晃动，一点也不安分，我的映在墙上的影子被晃动的烛光赶的满墙乱跑，好像是谁想要捉它似的。
+不知不觉间夜已过半，起了身想去关了房门睡觉，却发现有一轮清新明亮的月亮挂在蓝宇，淡淡的月光划过树梢，给地上铺上了一层淡淡的清辉，远处的房屋也仿佛披上了一件纱衣，透着神密的色彩。于是，我便被这样的景色给吸住了，便取了外衣披在肩上，合了房门赏月去了。
+踏在羊肠小道上，小道上满是秋天飘落的黄叶，踩在上面软绵绵的。远处的河面上飘着一层淡淡的水汽，在河岸的周围和上空悬着一层薄雾，月光穿过它，使它变成了银白色，闪闪的发光，那不大不小的河道便整个儿像是包在一种轻飘的、透明的棉絮里。
+渐渐的远离了我那沉睡的村庄，来到了旷野，心胸顿时宽阔起来，有一种心旷神怡的感觉。找了一个高处坐下来，望起了这初秋的月亮，干净、明亮，一尘不染。心里想着，总让猪八戒神魂颠倒的嫦娥不知道现在在干什么，不知道她能否看到这下界的一切，看到我这样一个“夜游神”，不知道那只可爱的玉兔是否还在桂树下捣着仙药。初秋的月亮，虽经历了几千年，甚至几万年的世俗，却丝毫未被这浑浊的世俗沾染！或许正是因为它高高在上，远离了世俗的纷扰，不屑于世俗的纷争、混乱和人世间的尔虞我诈，所以才保持了这等高洁，就像一位深居山林的隐者。
+月光继续流泻于天地，我身披一件轻纱，轻轻地走在这寂静的夜晚，耳边少了夏蝉的聒噪，只有远处沉睡的村庄中的几声狗吠，更衬托出了这夜的寂静，寂静的夜凉如水。今夜因为一轮干净、一尘不染的明月，让我重归了真实的自己，或许也只有这个时候我的心才像月一样干净、明亮，一尘不染，过了今夜，我恐怕又要投身到为生活、学习而忙碌的洪流中去了。
+不知何时才会有今天这样的闲情逸趣，坐在这寂静的夜里观秋赏月，使我的心像今天这样如月亮般干净、明亮，一尘不染。</p>
+		</div>
+		<div id="right" class="side left col-xs-2"></div>
+		</div>
+		</div>
+		<script>
+			//以下代码根据天气修改两侧的背景颜色
+			var weather = document.getElementById("weather");
+			var left = document.getElementById("left");
+			var right = document.getElementById("right");
+			var body = document.getElementById("body");
+			switch(weather.innerHTML){
+				case "晴": 		body.style.backgroundColor = "yellow";break;
+				case "阴":		body.style.backgroundColor = "gray";break;
+				case "多云":		body.style.backgroundColor = "navajowhite";break;
+				case "小雨":		body.style.backgroundColor = "darkgray";break;
+				case "中雨":		body.style.backgroundColor = "darkslategray";break;
+				case "大雨":		body.style.backgroundColor = "dimgray";break;
+				case "阵雨":		body.style.backgroundColor = "black";break;
+				case "雷阵雨":	body.style.backgroundColor = "yellow";break;
+				case "暴雨":		body.style.backgroundColor = "yellow";break;
+				case "雾":		body.style.backgroundColor = "yellow";break;
+				case "霾":		body.style.backgroundColor = "yellow";break;
+				case "霜冻":		body.style.backgroundColor = "yellow";break;
+				case "暴风":		body.style.backgroundColor = "yellow";break;
+				case "台风":		body.style.backgroundColor = "yellow";break;
+				case "雨夹雪":	body.style.backgroundColor = "yellow";break;
+				case "小雪":		body.style.backgroundColor = "yellow";break;
+				case "中雪":		body.style.backgroundColor = "yellow";break;
+				case "大雪":		body.style.backgroundColor = "yellow";break;
+				case "暴风雪":	body.style.backgroundColor = "yellow";break;
+				case "冰雹":		body.style.backgroundColor = "yellow";break;
+			}
+			$(function(){
+	        $('.cherry').Cherry_Blossoms({
+	            is_Cherry:true,//是否生成樱花
+	            image_min:10,//花瓣最小宽度和高度
+	            image_max:50,//花瓣最大宽度和高度
+	            time_min:10000,//花瓣最快下坠时间
+	            time_max:20000,//花瓣最慢下坠时间
+	            interval:500//花瓣生成时间间隔
+	        })
+	    })
+		</script>
+		<audio autoplay="true">
+			<source src="../music/兔裹煎蛋卷 - 终有一天，我会抛弃你们.mp3"></source>
+		</audio>
+	</body>
+</html>

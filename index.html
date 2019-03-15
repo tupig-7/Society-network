@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="img/0.ico" rel="shortcut icon" />
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">  
+		<link rel="stylesheet" href="css/index.css">
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="js/index.js"></script>
+		<title>学社网</title>
+	</head>
+	<body>
+		<!-----------------------------头部----------------------------->
+		<header class="main-header">
+			 <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <a class="branding" href="http://www.ahnu.edu.cn" title="百度">
+                    	<center><img src="img/ahnu.png" alt="安徽师范大学"></center> 
+					</a>
+                    <img src="img/ahnu.png" alt="安徽师范大学" class="hide">
+                </div>
+            </div>
+        </div>
+		</header>
+		<!-----------------------------导航栏----------------------------->
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid"> 
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">学社网</a><!--放log-->
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> 
+					<ul class="nav navbar-nav">
+						<!--
+			            	作者：2664006323@qq.com
+			            	时间：2018-02-10
+			            	描述：这是一个导航栏
+			            -->
+						<li class="active"><a href="#home" data-toggle="tab">主页</a></li>
+						<li><a href="#images" data-toggle="tab">社团风采</a></li>
+						<li><a href="classroom.html" target="_blank">教室占用</a></li>
+						<li><a href="#music" data-toggle="tab">音乐<span class="badge">4</span></a></li>
+						<li><a href="#navigation" data-toggle="tab">导航</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								帮助
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="#about" data-toggle="tab">关于本站</a></li>
+								<li><a href="#contact-me" data-toggle="tab">联系站长</a></li>
+							</ul>
+					</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li>
+								<button id="login" onclick="return hidden()" type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">登录</button>
+							</li>
+							<li>
+								<button id="register" onclick="return hidden()" type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal1">注册</button>
+							</li>
+						</ul>
+				</div><!-- /.navbar-collapse --> 
+			</div><!-- /.container-fluid -->
+										
+			<!--
+				作者：2664006323@qq.com
+				时间：2018-03-28
+				描述：登陆模态框
+			-->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog">
+			        <div class="modal-content">
+			          <div class="modal-header">
+			            <button data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+			            <h4 class="modal-title">登陆</h4>
+			          </div>
+			          <div class="modal-body">
+			            <div class="login" align="center">
+			        <div class="message"><span class="muted">欢迎来到学社网</span></div>
+			        <hr class="hr15">
+			        <!--
+			        	编写后台时,将注释删除
+			     <form name="form1" method="post" action="islogin.jsp"  onSubmit="return myCheck()">
+			     -->
+			       <table style="margin-center">
+			       	<tr>
+			      		<td><span class="muted">账户:</span></td>
+			          <td><input type="text" name="ID" class="form-control" placeholder="ID号" width="20px" value="admin"></td>
+			        </tr>
+			        <tr>
+			        	<td>&nbsp;</td>
+			        	
+			        </tr>
+			        <tr>
+			        	<td><span class="muted">密码:</span></td>
+			            <td><input type="password" name="password" class="form-control" placeholder="密码" width="20px" value="root"></td>
+			        </tr>
+			        <tr>
+			        	<td>&nbsp;</td>
+			        	
+			        </tr>
+			        <tr>
+				        <td><span class="muted">身份：</span></td>
+				        <td><span class="muted">学生</span>&nbsp;<input type="radio" value="1" name="identity" checked>&nbsp;&nbsp;管理员<input type="radio" value="0" name="identity"></td>
+			        </tr>
+			        <tr>
+			        	<td>&nbsp;</td>
+			        </tr>
+			        </table>
+			        <!--编写后台时,将a标签改成button标签,改成表单-->
+			    	  <a class="btn btn-primary" href="back/index.html"><span class="muted">登陆</span></a>
+			          <button class="btn btn-info" type="reset" style="margin-left: 20px;"><span class="muted">重置</span></button>
+			    	<!--</form>-->
+			    </div>
+			          </div>
+			          <div class="modal-footer">
+			            <button data-dismiss="modal" class="btn btn-default" type="button" onclick="myCheck()">关闭</button>
+			            <a class="btn btn-primary" href="back/index.html">提交</a>
+			          </div>
+			        </div>
+			      </div>
+		</nav>
+		
+			<!--
+				作者：tao 
+				时间：2018-04-12
+				描述：注册模态框
+			-->
+	<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog"  >
+		        <div class="modal-content">
+		          <div class="modal-header">
+		            <button data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+		            <h4 class="modal-title">学社网</h4>
+		          </div>
+		          <div class="modal-body">
+		            <div class="register" align="center">
+		             <div class="message"><span class="muted">欢迎来到学社网</span></div>
+			        
+		        <hr class="hr15">
+		     <form name="form1" method="post" action="islogin.jsp"  onSubmit="return myCheck()">
+		       <table style="margin-center">
+		   
+			       	<tr>
+			          <td><input type="text" name="ID" class="form-control" placeholder="ID号" width=20px></td>
+			        </tr>
+			        <tr>
+			        	<td>&nbsp;</td>
+			        	
+			        </tr>
+			   
+			        <tr> 
+			        	  
+			            <td><input type="password" name="password" class="form-control" placeholder="密码" width=20px></td>
+			        </tr>
+			         <tr>
+			        	<td>&nbsp;</td>
+			        	
+			        </tr>
+			        <tr> 
+			            <td><input type="password" name="password" class="form-control" placeholder="确认密码" width=20px></td>
+			        </tr>
+			    
+		        </table>
+		        <div class="login-botton">
+		    	  	<button class="btn btn-primary btn-lg btn-block" type="submit" style="background-color: #007FFF;"><span class="muted"> Register</span></button>
+		        </div>
+		    	</form>
+		    	<br />
+		    </div>
+		          </div>
+		          <div class="modal-footer">
+		            <!--<button class="barter_btn" onClick="parent.location.href='login.html'" >已有秘籍，前往登录</button>
+		          </div>-->
+		        </div><!-- /.modal-content -->
+		      </div><!-- /.modal-dialog -->
+		</div>
+	</div>
+		
+	<!--用于生成下落的六芒星-->
+		
+		
+		<!-----------------------------导航栏内容----------------------------->
+		<div id="bar-result" class="tab-content">
+			<!-----------------------------轮播图----------------------------->
+			<div id="home" class="tab-pane fade in active">
+				<!--轮播图效果-->
+				<div id="myCarousel" class="carousel slide">
+					<!--轮播指标-->
+					<ol class="carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1"></li>
+						<li data-target="#myCarousel" data-slide-to="2"></li>
+						<li data-target="#myCarousel" data-slide-to="3"></li>
+					</ol>
+					<!--轮播项目-->
+					<div class="carousel-inner">
+						<div class="item active">
+							<img src="img/s1.jpg" alt="First slide" title="开源软件协会">
+						</div>
+						<div class="item">
+							<img src="img/s2.jpg" alt="Second slide" title="计算机爱好者协会">
+						</div>
+						<div class="item">
+							<img src="img/s3.jpg" alt="Third slide" title="经济协会">
+						</div><div class="item">
+							<img src="img/s4.jpg" alt="Forth slide" title="经济协会">
+						</div>
+					</div>
+					<!--轮播导航-->
+					<a class="carousel-control left" href="#myCarousel"
+						data-slide="prev">&lsaquo;
+					</a>
+					<a class="carousel-control right" href="#myCarousel"
+						data-slide="next">&rsaquo;
+					</a>
+				</div>
+				<div class="container">
+					<hr />
+					<!--这里搁两篇美文,美炸的那种-->					
+					<div class="row">
+						<div class="article">
+						<div class="col-xs-4">
+							<center>
+							<span style="font-family:楷体;font-weight:bold;font-size:24px">推文1</span>
+							<span style="font-family:楷体;font-weight:bold;font-size:20px">
+								<p>愿与执手立黄昏,愿与品茗粥尚温。</p>
+								<p>愿与添香捻熄灯,愿与捧卷书半生。</p>
+								<p>愿与剪烛夜已深,愿与对弈把酒分。</p>
+								<p>愿与叠袖相拭泪,愿与入梦共前尘。</p>
+								<p>愿与赏月顾星辰,愿与烹茶清未冷。</p>
+								<p>愿与静听诉衷肠,愿与话君心头梦。</p>
+								<p>愿与解语心中泪,愿与共行天下路。</p>
+								<p>回首灯火阑珊处,那人一如初见立中宵。</p>
+								
+							</span>
+							</center>
+						</div>
+						<div class="col-xs-4">
+							<center>
+							<span style="font-family:楷体;font-weight:bold;font-size:24px">推文2</span>
+							<span style="font-family:楷体;font-weight:bold;font-size:20px">
+								<p>无人与我立黄昏 无人问我粥可温。</p>
+								<p>无人与我捻熄灯 无人共我书半生。</p>
+								<p>无人与我把酒分 无人告我夜已深。</p>
+								<p>无人与我缘相认 无人陪我度红尘。</p>
+								<p>无人拘我言中泪 无人愁我路独行。</p>
+								<p>无人与我比肩立 无人牵我共连理。</p>
+								<p>愿与解语心中泪 愿与共行天下路。</p>
+								<p>无人与我诉衷肠 无人伴我白发生。</p>
+							</span>
+							</center>
+						</div>
+						</div>
+						<div class="col-xs-4">
+							<center>
+								<img src="img/sakura.jpg" width="400px" height="400px"/>
+							</center>
+						</div>
+					</div>
+					<hr />
+					<div class="row">
+						<div id="lost"class="col-xs-4">
+							<span>失物招领<a href="html/find.html" class="pull-right">更多</a></span>
+						<ul class="list-group">
+						<li class="list-group-item">快来看看有没有你丢的东西吧</li>
+						<li class="list-group-item"><a href="html/find.html">一只丢失的流浪狗</a></li>
+						<li class="list-group-item"><a href="html/find.html">黑色钱包</a></li>
+						<li class="list-group-item"><a href="html/find.html">若干人民币</a></li>
+						</ul>
+						</div>
+						<div id="found" class="col-xs-4">
+							<span>寻物启事<a href="html/find.html" class="pull-right">更多</a></span>
+						<ul class="list-group">
+						<li class="list-group-item">有没有人捡到这些东西呢</li>
+						<li class="list-group-item"><a href="html/find.html">自行车</a></li>
+						<li class="list-group-item"><a href="html/find.html">红色背包</a></li>
+						<li class="list-group-item"><a href="html/find.html">流浪猫</a></li>
+						</ul>
+						</div>
+						<div id="diary" class="col-xs-4">
+							<span>日记模块<a href="diary.html"class="pull-right">更多</a></span>
+						<ul class="list-group">
+						<li class="list-group-item">圈出一块地我要放日记模块</li>
+						<li class="list-group-item"><a href="diary/diary1.html">观秋赏月——李四</a></li>
+						<li class="list-group-item"><a href="diary/diary2.html">我的理想——张三</a></li>
+						<li class="list-group-item"><a href="diary/diary3.html">可爱的波波——王五</a></li>
+						</ul>
+						</div>
+					</div>
+					</div>
+			</div><!--轮播图结束-->
+			<hr />
+			<div id="images" class="tab-pane fade">
+				<!--图片查看-->
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<center><span style="font: 楷体;font-size: 20px;">社团简介</span></center>
+					</div>
+				</div>
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-3">
+							<a class="thumbnail" href="#"><img src="img/1.jpg" class="img-rounded"></a>
+							<div class="caption">
+								<div class="text-muted">开源软件协会</div></br>
+								<p><a href="#" class="btn btn-success">查看</a></p>
+							</div>
+						</div>
+						<div class="col-xs-3">
+							<a class="thumbnail" href="#"><img src="img/2.jpg" class="img-rounded"></a>
+							<div class="caption">
+								<div class="text-muted">计算机爱好者协会</div></br>
+								<p><a href="#" class="btn btn-success">查看</a></p>
+							</div>
+						</div>
+						<div class="col-xs-3">
+							<a class="thumbnail" href="#"><img src="img/3.jpg" class="img-rounded"></a>
+							<div class="caption">
+								<div class="text-muted">经济协会</div></br>
+								<p><a href="#" class="btn btn-success">查看</a></p>
+							</div>
+						</div>
+						<div class="col-xs-3">
+							<a class="thumbnail" href="#"><img src="img/4.jpg" class="img-rounded"></a>
+							<div class="caption">
+								<div class="text-muted">保健协会</div></br>
+								<p><a href="#" class="btn btn-success">查看</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!---------------------地图导航功能区-------------------------->
+			<div id="navigation" class="tab-pane fade">
+				<center>
+					<span>仅限查询本校路线</span>
+					<div class="input-group">
+						<input id="origin" type="text" class="form-control" placeholder="起点">
+						<span class="input-group-addon">-</span>
+						<input id="destination" type="text" class="form-control" placeholder="终点">
+					</div>
+					<div class="btn-group-lg">
+						<button type="button" class="btn btn-success btn-lg" onclick="planning()">提交</button>
+						<button type="button" class="btn btn-danger btn-lg">取消</button>
+					</div>
+					<div id="container" tabindex="0"></div>
+					<div id="panel"></div>
+				</center>
+			</div>
+			<div id="about" class="tab-pane fade">
+				<center>
+				<div id="poet">
+					<center>
+						<p>这一刻，我突然想把这个网站完成</p>
+						<p>我不知道有没有这个机会，或是这样的能力</p>
+						<p>但，我想完成它，取名为学社网</p>
+						<p>每个人都只是一颗星星，或明或暗</p>
+						<p>与别的星星之间或是相邻，亦或是遥遥相望</p>
+						<p>而你将是最亮的那一颗</p>
+						<p>一入此星河，相望两不移</p>
+					</center>
+				</div>
+				</center>
+			</div>
+			<div id="contact-me" class="tab-pane fade">
+				<p class="well">QQ:**********</p>
+				<p class="well">电话:*********</p>
+			</div>
+		</div>
+		<div  id="copyright">
+		    <p style="margin-top:10px">2018@共享gis  All Rights Reserved. </p>
+			<p> 工信部备案号： *********** </p>
+			<p> 联系方式：qq:**********   邮箱：**********@qq.com </p>
+		</div>
+		<!--导入高德地图js API-->
+		<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.4&key=175e45ce26702155862c1a9190d9c897"></script> 
+		<script type="text/javascript" src="https://webapi.amap.com/demos/js/liteToolbar.js"></script>
+		<script>
+			 var map = new AMap.Map('container',{
+	            resizeEnable: true,
+	            zoom: 18,//地图显示的缩放级别
+	            /*给地图按需设定中心点和坐标等属性，这里可以通过两种方式，
+	             *	第一种，直接在地图初始化的时候传入相关属性，
+	             *	center属性的值可以是经纬度的二元数组，也可以是AMap.LngLat对象，要求经度值在前，纬度值在后：
+	            */
+	            center: [118.3790100000,31.2841200000]//安徽师范大学花津校区的经纬度
+       		 });
+       		 /*进行路线规划*/
+       		function planning(){
+       			var map = new AMap.Map('container',{
+	            resizeEnable: true,
+	            zoom: 18,//地图显示的缩放级别
+	            /*给地图按需设定中心点和坐标等属性，这里可以通过两种方式，
+	             *	第一种，直接在地图初始化的时候传入相关属性，
+	             *	center属性的值可以是经纬度的二元数组，也可以是AMap.LngLat对象，要求经度值在前，纬度值在后：
+	            */
+	            center: [118.3790100000,31.2841200000]//安徽师范大学花津校区的经纬度
+       		 });
+       			var begin = document.getElementById("origin");
+       			var end = document.getElementById("destination");
+       			AMap.service('AMap.Walking',function(){//回调函数
+			    //实例化Walking
+			   var  walking = new AMap.Walking({
+			    	map: map,
+			    	panel: "panel"
+				}); //构造路线导航类
+				   //传名称、城市信息
+				walking.search([
+					{keyword:'安徽师范大学花津校区'+begin.value},
+					{keyword:'安徽师范大学花津校区'+end.value}
+					], function(status, result){
+				    //TODO 解析返回结果，自己生成操作界面和地图展示界面
+				});   
+			});
+       		}
+			function hidden(){
+				document.getElementById("login").style.display='block';	
+			}
+            function myCheck()
+            {
+               for(var i=0;i<2;i++)
+               {
+                  if(document.form1.elements[i].value=="")
+                  {
+                     alert("学号或密码为空");
+                     document.form1.elements[i].focus();
+                     return false;
+                  }
+               }
+               return true;
+            }
+            $(function(){
+	        $('.cherry').Cherry_Blossoms({
+	            is_Cherry:true,//是否生成樱花
+	            image_min:10,//花瓣最小宽度和高度
+	            image_max:50,//花瓣最大宽度和高度
+	            time_min:10000,//花瓣最快下坠时间
+	            time_max:20000,//花瓣最慢下坠时间
+	            interval:500//花瓣生成时间间隔
+	        })
+	    })
+		</script>
+	</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../img/0.ico" rel="shortcut icon" />
+		<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">  
+		<link rel="stylesheet" href="../css/diary.css">
+		<link rel="stylesheet" href="../css/sakura.css">
+        <script src="../js/jquery-3.3.1.min.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
+        <script src="../js/sakura.js"></script>
+		<title>心情日记</title>
+	</head>
+	<body>
+		<!--用于生成下落的五角星-->
+		<div class="cherry">
+		<img id="sakura" src="../img/pentagram.png" alt="" hidden="hidden" >
+		</div>
+		<div class="title"><center><span class="muted" style="font-family:仿宋;font-weight:bold;font-size:24px">可爱的波波</span></center></div>
+		<div class="head">
+			<center style="font-family:宋体;font-weight:bold;font-size:16px">
+			<span>作者:&nbsp;王五&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+			<span>日期:2018/03/28&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+			<span>天气:</span>
+			<span id="weather" value="阵雨">阵雨</span>
+			</center>
+		</div>
+		<div id="body"class="container">
+			<div class="row">
+			<div id="left" class="left col-xs-2"></div>
+		<div class="article col-xs-8">
+			<p class="muted" style="font-family:宋体;font-weight:bold;font-size:16px;color:#a57a3f;">我家养了一只小猫，它非常惹人喜爱，所以取名叫“波波”。
+波波的头圆圆的，小小的，像个小皮球。它有一双水汪汪的眼睛，在阳光的照耀下，像两颗光芒四射的黑珍珠似的。它的鼻子很灵敏，就算与它相隔十万八千里的一块肉，它也能够闻到香味。
+波波背上长着绒毛乌鸦般黑，腹部下是白色，白得像雪，这两种颜色合为一体，让人感到它是那么的天真可爱。
+波波的四肢发达，跑起来像猎豹一样快。它的爪子很尖锐，如果多使点儿力气，就会在地板上划出一道道抓印。
+波波的尾巴又长又直，直得像一枚正要起飞的火箭。瞧！它又在向刚下班的妈妈使劲摆动它火箭般的尾巴，还把前肢举起来，要妈妈抱抱。
+波波很挑食，就爱吃肉。它吃的时候先用鼻子碰碰、嗅嗅，然后张开血盆大口，猛地一咬，狼吞虎咽地吃起来。这也难怪它那么胖。
+波波既喜欢晒太阳，又喜欢人多热闹的地方。每到阳光灿烂时，它就会自己跑道阳台上，找个好位置，伸展着头和脚，时不时闭上双眼，享受着阳光的温暖，一副舒服惬意的样子，让人看了忍不住发笑。如果阳光移动了位置，它就会跟着光线的移动而移动。你看，它多聪明！
+当家里来了客人，它也喜欢来凑热闹。它会爬到你的身上，用双腿踢你的身子，要你把手拿出来给它舔，或眼睁睁地看着你，要你跟它聊天。玩得过瘾了，它还会爬到你的肩膀上，拨动你的头发。
+可是，当它玩得疲惫不堪时，就会走回自己的小床，趴倒被子上，进入甜蜜的梦乡……</p>
+		</div>
+		<div id="right" class="side left col-xs-2"></div>
+		</div>
+		</div>
+		<script>
+			//以下代码根据天气修改两侧的背景颜色
+			var weather = document.getElementById("weather");
+			var left = document.getElementById("left");
+			var right = document.getElementById("right");
+			var body = document.getElementById("body");
+			switch(weather.innerHTML){
+				case "晴": 		body.style.backgroundColor = "yellow";break;
+				case "阴":		body.style.backgroundColor = "gray";break;
+				case "多云":		body.style.backgroundColor = "navajowhite";break;
+				case "小雨":		body.style.backgroundColor = "darkgray";break;
+				case "中雨":		body.style.backgroundColor = "darkslategray";break;
+				case "大雨":		body.style.backgroundColor = "dimgray";break;
+				case "阵雨":		body.style.backgroundColor = "black";break;
+				case "雷阵雨":	body.style.backgroundColor = "yellow";break;
+				case "暴雨":		body.style.backgroundColor = "yellow";break;
+				case "雾":		body.style.backgroundColor = "yellow";break;
+				case "霾":		body.style.backgroundColor = "yellow";break;
+				case "霜冻":		body.style.backgroundColor = "yellow";break;
+				case "暴风":		body.style.backgroundColor = "yellow";break;
+				case "台风":		body.style.backgroundColor = "yellow";break;
+				case "雨夹雪":	body.style.backgroundColor = "yellow";break;
+				case "小雪":		body.style.backgroundColor = "yellow";break;
+				case "中雪":		body.style.backgroundColor = "yellow";break;
+				case "大雪":		body.style.backgroundColor = "yellow";break;
+				case "暴风雪":	body.style.backgroundColor = "yellow";break;
+				case "冰雹":		body.style.backgroundColor = "yellow";break;
+			}
+			$(function(){
+	        $('.cherry').Cherry_Blossoms({
+	            is_Cherry:true,//是否生成樱花
+	            image_min:10,//花瓣最小宽度和高度
+	            image_max:50,//花瓣最大宽度和高度
+	            time_min:10000,//花瓣最快下坠时间
+	            time_max:20000,//花瓣最慢下坠时间
+	            interval:500//花瓣生成时间间隔
+	        })
+	    })
+		</script>
+		<audio autoplay="true">
+			<source src="../music/兔裹煎蛋卷 - 终有一天，我会抛弃你们.mp3"></source>
+		</audio>
+	</body>
+</html>

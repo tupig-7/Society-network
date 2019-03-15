@@ -1,0 +1,83 @@
+body {
+	background-color: lightgoldenrodyellow;
+}
+#login {
+	height: 5px;
+}
+#register {
+	height: 5px;
+}
+.main-header{
+	background-image: url(../img/5.jpg);
+}
+#logina:visited{
+	color:#000000;
+}
+.col-xs-3 img{
+  width:300px;
+  height: 200px;
+}
+.col-xs-3{
+  text-align:center;
+}
+/*设置下落图片格式*/
+#sakura {
+	width:50px;
+    height:50px;
+    margin-top:-5%;
+    opacity: 0.5;
+    position: absolute;
+    z-index: 1;
+}
+#copyright {
+  background-color: #202020;
+  height: 100px;
+  color: #524f4f;
+  text-align: center;
+  font-size: 10px;
+  padding-top: 6px;
+}
+/*设置轮播图图片大小和格式*/
+#myCarousel{
+	margin: 0px 200px 100px 200px;
+}
+#myCarousel img{
+	height: 500px;
+	width: 1000px;
+}
+.navbar{
+	margin: 0px 0px 0px 0px;
+}
+hr {
+	height:1px;
+	border:none;
+	border-top:1px 
+	dashed #1E90FF;
+}
+#poet {
+	width: 400px;
+	height: 400px;
+	background-color: lightgreen;
+	margin-top: 10px;
+	font-family: 楷体;
+	font-size: 20px;
+}
+#lost{
+	background-color: lightsalmon;
+}
+#found{
+	background-color: lightblue;
+}
+#diary{
+	background-color: lightgreen;
+}
+/*为了使底部div看上去固定在最底下，设置div高度*/
+#music {
+	height: 400px;
+}
+#about {
+	height: 400px;
+}
+#contact-me {
+	height: 400px;
+}

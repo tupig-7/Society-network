@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>登录表单</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		.login_nav{
+			margin-top: 50px;
+		}
+		.login-botton{
+			margin-top: 50px;
+		}
+	   .modal-header{background-color: #FF0000; }
+	   .barter_btn{border: 0px; background: transparent; outline: 0px;}
+	</style>
+</head>
+<body >
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+	      Login
+</button>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal-dialog"  >
+        <div class="modal-content">
+          <div class="modal-header">
+            <button data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title">学社网</h4>
+          </div>
+          <div class="modal-body">
+            <div class="login" align="center">
+        
+        <hr class="hr15">
+     <form name="form1" method="post" action="islogin.jsp"  onSubmit="return myCheck()">
+       <table style="margin-center">
+   
+	       	<tr>
+	      
+	          <td><input type="text" name="ID" class="form-control" placeholder="ID号" width=20px></td>
+	        </tr>
+	        <tr>
+	        	<td>&nbsp;</td>
+	        	
+	        </tr>
+	   
+	        <tr> 
+	        	  
+	            <td><input type="password" name="password" class="form-control" placeholder="密码" width=20px></td>
+	        </tr>
+	    
+        </table>
+        <div class="login-botton">
+    	  	<button class="btn btn-primary btn-lg btn-block" type="submit" style="background-color: #FF0000;"><span class="muted">登陆</span></button>
+        </div>
+    	</form>
+    	<br />
+    </div>
+          </div>
+          <div class="modal-footer">
+                             <button class="barter_btn" onClick="parent.location.href='register.html'" >没有账号?前往注册</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+</div>
+ 
+<div style="height:200px"></div>
+</body>
+</html>

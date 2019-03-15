@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>用户中心</title>
+		<link href="../img/0.ico" rel="shortcut icon" />
+		<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="../css/back_index.css" rel="stylesheet" />
+		<script src="../js/jquery-3.3.1.min.js"></script>
+		<script src="../bootstrap/js/bootstrap.min.js"></script>
+		<script src="bootstrap/js/bootstrap-wysiwyg.js"></script>
+		<script src="bootstrap/js/jquery.hotkeys.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../ueditor/ueditor.config.js"></script>
+    	<script type="text/javascript" charset="utf-8" src="../ueditor/ueditor.all.min.js"> </script>
+	</head>
+	<body>
+		<!--顶部导航栏部分-->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" title="title" href="#">学社网</a>
+       </div>
+       <div class="collapse navbar-collapse">
+           <ul class="nav navbar-nav navbar-right">
+               <li role="presentation">
+                   <a href="#">当前用户：<span class="badge">admin</span></a>
+               </li>
+               <li>
+                   <a href="../index.html">
+                         <span class="glyphicon glyphicon-lock"></span>退出登录</a>
+                </li>
+            </ul>
+       </div>
+    </div>      
+</nav>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-2">
+			<div class="left">
+			<ul id="tab" class="nav nav-pills nav-stacked">
+				<li class="active">
+					<a href="#infor" data-toggle="tab">
+						用户信息
+					</a>
+				</li>
+				<li>
+					<a href="#write" data-toggle="tab">
+						编写日志
+					</a>
+				</li>
+				<li>
+					<a href="#message" data-toggle="tab">
+						账户管理
+					</a>
+				</li>
+				<li>
+					<a href="#music" data-toggle="tab">
+						音乐分享<span class="badge">4</span>
+					</a>
+				</li>
+			</ul>
+			</div>
+		</div>
+		<div id="content" class="tab-content col-xs-10">
+		<div class="tab-pane fade in active" id="infor">
+			<!--划定固定长宽的div用于制作资料卡-->
+			<div id="card">
+				<center>
+				<table>
+					<tr>
+					<td>
+						<span>头像:</span>
+					</td>
+					<td>
+						<img id="icon" src="../img/5.jpg"/>
+					</td>
+					</tr>
+					<tr>
+						<td>
+							<span>昵称:</span>
+						</td>
+						<td>
+							<span>admin</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span>组织:</span>
+						</td>
+						<td>
+							<span>新雷锋社团</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span>年龄:</span>
+						</td>
+						<td>
+							<span>18岁</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span>籍贯:</span>
+						</td>
+						<td>
+							<span>安徽省芜湖市</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span>注册时间:</span>
+						</td>
+						<td>
+							<span>2018/03/29</span>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td><center><span>兴趣爱好</span></center></td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>
+							<center>
+									<div class="col-xs-2">
+										<img class="habbit" src="../img/1.jpg"/>
+										<div class="caption"><span>狗</span></div>
+									</div>
+									<div class="col-xs-2">
+										<img class="habbit" src="../img/8.jpg"/>
+										<div class="caption"><span>猪</span></div>
+									</div>
+									<div class="col-xs-2">
+										<img class="habbit" src="../img/9.jpg"/>
+										<div class="caption"><span>猫</span></div>
+									</div>
+									<div class="col-xs-2">
+										<img class="habbit" src="../img/3.jpg"/>
+										<div class="caption"><span>兔</span></div>
+									</div>
+							</center>
+						</td>
+					</tr>
+				</table>
+				</center>
+			</div>
+		</div>
+		<div id="write" class="tab-pane fade">
+			<div id="diary">
+		<form>
+			
+		<!--
+        	作者：2664006323@qq.com
+        	时间：2018-03-28
+        	描述：以下使用的是ueditor编辑器
+        -->
+		<div>
+			<center>
+		    <h1>日记编辑</h1>
+		    <span>日期:<input id="date" type="date" value="2018-03-24"/>&nbsp;&nbsp;</span>
+			<span>时间:<input id="time" type="time" value="12:40"/>&nbsp;&nbsp;</span>
+			<span>
+				天气:<select id="weather" onchange="weather()">
+					<option>	晴		</option>
+					<option>	阴		</option>
+					<option>	多云 	</option>
+					<option>	小雨 	</option>
+					<option>	中雨 	</option>
+					<option>	大雨  	</option>
+					<option>	阵雨 	</option>
+					<option>	雷阵雨 	</option>
+					<option>	暴雨		</option>
+					<option>	雾		</option>
+					<option>	霾		</option>
+					<option>	霜冻		</option>
+					<option>	暴风		</option>
+					<option>	台风		</option>
+					<option>	雨夹雪	</option>
+					<option>	小雪		</option>
+					<option>	中雪		</option>
+					<option>	大雪		</option>
+					<option>	暴风雪	</option>
+					<option>	冰雹		</option>
+				</select>
+			</span>
+		    <script id="editor" type="text/plain" style="width:600px;height:500px;"></script>
+		    <hr />
+		    <button type="submit" class="btn-info" type="button" onclick="preview()">提交</button>
+		    <button type="reset" class="btn-info">取消</button>
+		    </center>
+		</div>
+		</form>
+		</div>
+		</div>
+		<!--用户账号管理-->
+		<div id="message" class="tab-pane fade">
+			<center>
+			<table>
+				<tr>
+					<td>账号</td>
+					<td><input type="text" class="text-info" value="admin"/></td>
+				</tr>
+				<tr>
+					<td>密码</td>
+					<td><input type="text" class="text-info" value="123456789"/></td>
+				</tr>
+				<tr>
+					<td>籍贯</td>
+					<td><input type="text" class="text-info" value="安徽省芜湖市"/></td>
+				</tr>
+			</table>
+		</center>
+		</div>
+		<!--管理音乐-->
+		<div id="music">
+			<center>
+				<span style="font-family:仿宋;font-weight:bold;font-size:24px">已经分享的音乐</span><br/>
+				<hr />
+				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=32408774&auto=0&height=66">	</iframe><br/>
+				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=443194241&auto=0&height=66"></iframe><br/>
+				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=440353151&auto=0&height=66"></iframe><br/>
+				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=445546453&auto=0&height=66"></iframe>
+			</center>
+		</div>
+		</div>
+	</div>
+</div>
+<!--
+	描述：导航栏显示内容
+-->
+
+ <!-- 底部页脚部分 -->
+ <nav class="navbar navbar-default navbar-fixed-bottom">
+ <div class="footer">
+     <p class="text-center">
+         2018 @ Tao.
+     </p>
+ </div>
+ </nav>
+ <script id="editor" type="text/plain" style="width:600px;height:500px;"></script>
+		<script type="text/javascript">
+
+	    //实例化编辑器
+	    var ue = UE.getEditor('editor');
+	    //以下代码根据天气修改两侧的背景颜色
+			function weather(){
+			var weather = document.getElementById("weather");
+			var left = document.getElementById("left");
+			var right = document.getElementById("right");
+			var body = document.getElementById("body");
+			alert(weather.innerText);
+			switch(weather.value){
+				case "晴": 		body.style.backgroundColor = "yellow";break;
+				case "阴":		body.style.backgroundColor = "gray";break;
+				case "多云":		body.style.backgroundColor = "navajowhite";break;
+				case "小雨":		body.style.backgroundColor = "darkgray";break;
+				case "中雨":		body.style.backgroundColor = "darkslategray";break;
+				case "大雨":		body.style.backgroundColor = "dimgray";break;
+				case "阵雨":		body.style.backgroundColor = "black";break;
+				case "雷阵雨":	body.style.backgroundColor = "yellow";break;
+				case "暴雨":		body.style.backgroundColor = "yellow";break;
+				case "雾":		body.style.backgroundColor = "yellow";break;
+				case "霾":		body.style.backgroundColor = "yellow";break;
+				case "霜冻":		body.style.backgroundColor = "yellow";break;
+				case "暴风":		body.style.backgroundColor = "yellow";break;
+				case "台风":		body.style.backgroundColor = "yellow";break;
+				case "雨夹雪":	body.style.backgroundColor = "yellow";break;
+				case "小雪":		body.style.backgroundColor = "yellow";break;
+				case "中雪":		body.style.backgroundColor = "yellow";break;
+				case "大雪":		body.style.backgroundColor = "yellow";break;
+				case "暴风雪":	body.style.backgroundColor = "yellow";break;
+				case "冰雹":		body.style.backgroundColor = "yellow";break;
+			}
+			}
+			function preview(){
+				document.getElementById("diary").innerHTML=
+				"<div class='title'><center><span class='muted' style='font-family:仿宋;font-weight:bold;font-size:24px'>我的理想</span></center></div>"+
+				"<div class='head'>"+
+				"<center style='font-family:宋体;font-weight:bold;font-size:16px'>"+
+				"<span>作者:&nbsp;张三&nbsp;&nbsp;|&nbsp;&nbsp;</span>"+
+				"<span>日期:"+document.getElementById("date").value+"&nbsp;&nbsp;|&nbsp;&nbsp;</span>"+
+				"<span>天气:</span>"+
+				"<span id='weather'>"+document.getElementById("weather").value+"</span>"+
+				"</center>"+
+				"</div>"+
+				"<div id='body' class='container'>"+
+				"<div class='row'>"+
+				"<div id='left' class='left col-xs-2'></div>"+
+				"<div class='article col-xs-8'>"+
+				"<p class='muted' style='font-family:宋体;font-weight:bold;font-size:16px;color:#a57a3f;'>"+
+				document.getElementById("editorValue").value+
+				"</p>"+
+				"</div>"+
+				"<div id='right' class='side left col-xs-2'></div>"+
+				"</div>"+
+				"</div>";
+			}
+</script>
+	</body>
+</html>

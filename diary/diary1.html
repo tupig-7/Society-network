@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../img/0.ico" rel="shortcut icon" />
+		<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">  
+		<link rel="stylesheet" href="../css/diary.css">
+		<link rel="stylesheet" href="../css/sakura.css">
+        <script src="../js/jquery-3.3.1.min.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
+        <script src="../js/sakura.js"></script>
+		<title>心情日记</title>
+	</head>
+	<body>
+		<!--用于生成下落的五角星-->
+		<div class="cherry">
+		<img id="sakura" src="../img/pentagram.png" alt="" hidden="hidden" >
+		</div>
+		<div class="title"><center><span class="muted" style="font-family:仿宋;font-weight:bold;font-size:24px">我的理想</span></center></div>
+		<div class="head">
+			<center style="font-family:宋体;font-weight:bold;font-size:16px">
+			<span>作者:&nbsp;张三&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+			<span>日期:2018/03/28&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+			<span>天气:</span>
+			<span id="weather" value="小雨">小雨</span>
+			</center>
+		</div>
+		<div id="body"class="container">
+			<div class="row">
+			<div id="left" class="left col-xs-2"></div>
+		<div class="article col-xs-8">
+			<p class="muted" style="font-family:宋体;font-weight:bold;font-size:16px;color:#a57a3f;">二月了，残冬拼力为我们下了一场雪，我们开心地笑了，雪欣慰地融化了。
+那天的清晨，我走出门去，发现下了雪。一辆辆私家车上都是白皑皑的雪，地上一块白的雪，一块黑的雪融后露出的地面，本该欢心雀跃，但不知为何，心中却多了几分惆怅。
+雪花还在轻盈地飞着，在空中舞蹈。好似一个个小精灵，每个旋转都有一分灵气。我望着雪，缄默不语。这个冬天的第一场雪，唤醒了一些记忆。
+八月的末尾，怀着对中学的向往我来到了那所学校，从此开始了一段崭新的生活。很快适应了快节奏的生活，每天都在匆匆中度过。流年似水，不知不觉半年的时间已经流去了，我收获了什么失去了什么无从得知，只是心里算着一本帐，一本青春与未来的帐。可是，为什么时间是这样地快呢？快得不给我留下一点点回忆，一秋一冬就在茫然中度过了。我没有好好地欣赏这个冬天，没有好好体味寒冬的真正含义。我只知道每天在学习与睡觉中度过，片刻的欢愉仿佛空气中的暗香，下一秒就已经不见。我惆怅，时间便在黯然中度过；我焦虑，时间便在心急中度过；我放松，时间便白白地流去了；我懊悔了，所以时间又游离在习题集的字里行间。就这样，一秋一冬不见了。
+谁能告诉我，我的时间哪里去了？是被十月的落叶载着驶向远方，还是被腊月的寒风吹向了未来？我不知道，不明白为何时间要这样匆匆，它不留下一点踪迹，只是无休无止地消失。我怕了，所以我开始努力了。我期待着，用整个青春换取光明的未来。然而当我看着他们毫无顾忌地挥霍时间时，我对自己产生疑问了：现在所做的一切，值得吗？我不曾想过享受青春，只是想着利用青春年华换来明日的微笑。可是，这仿佛一场赌局，我不敢想像一个环节的差错将会带来怎样的后果。
+曾经我以为我是时间的富翁，有大把大把的时间可以浪费。可当我真正学会利用时间时，我愕然了。原来时间是如此的宝贵，过去我的想法都是错误的。认认真真地告诉自己：人生只有一次，不能重来。
+当我费劲心思地寻找时间的踪迹时，时间又过去了。我找不到它的踪迹，能证明它存在的唯一证据，就是镜子里那个12岁的少年。即使眉梢仍带着几分稚气，眼里却是坚定。
+哦，我明白了，时间没有踪迹。</p>
+		</div>
+		<div id="right" class="side left col-xs-2"></div>
+		</div>
+		</div>
+		<script>
+			//以下代码根据天气修改两侧的背景颜色
+			var weather = document.getElementById("weather");
+			var left = document.getElementById("left");
+			var right = document.getElementById("right");
+			var body = document.getElementById("body");
+			switch(weather.innerHTML){
+				case "晴": 		body.style.backgroundColor = "yellow";break;
+				case "阴":		body.style.backgroundColor = "gray";break;
+				case "多云":		body.style.backgroundColor = "navajowhite";break;
+				case "小雨":		body.style.backgroundColor = "darkgray";break;
+				case "中雨":		body.style.backgroundColor = "darkslategray";break;
+				case "大雨":		body.style.backgroundColor = "dimgray";break;
+				case "阵雨":		body.style.backgroundColor = "black";break;
+				case "雷阵雨":	body.style.backgroundColor = "yellow";break;
+				case "暴雨":		body.style.backgroundColor = "yellow";break;
+				case "雾":		body.style.backgroundColor = "yellow";break;
+				case "霾":		body.style.backgroundColor = "yellow";break;
+				case "霜冻":		body.style.backgroundColor = "yellow";break;
+				case "暴风":		body.style.backgroundColor = "yellow";break;
+				case "台风":		body.style.backgroundColor = "yellow";break;
+				case "雨夹雪":	body.style.backgroundColor = "yellow";break;
+				case "小雪":		body.style.backgroundColor = "yellow";break;
+				case "中雪":		body.style.backgroundColor = "yellow";break;
+				case "大雪":		body.style.backgroundColor = "yellow";break;
+				case "暴风雪":	body.style.backgroundColor = "yellow";break;
+				case "冰雹":		body.style.backgroundColor = "yellow";break;
+			}
+			$(function(){
+	        $('.cherry').Cherry_Blossoms({
+	            is_Cherry:true,//是否生成樱花
+	            image_min:10,//花瓣最小宽度和高度
+	            image_max:50,//花瓣最大宽度和高度
+	            time_min:10000,//花瓣最快下坠时间
+	            time_max:20000,//花瓣最慢下坠时间
+	            interval:500//花瓣生成时间间隔
+	        })
+	    })
+		</script>
+		<audio autoplay="true">
+			<source src="../music/兔裹煎蛋卷 - 终有一天，我会抛弃你们.mp3"></source>
+		</audio>
+	</body>
+</html>

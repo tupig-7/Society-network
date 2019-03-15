@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">  
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+            function myCheck()
+            {
+               for(var i=0;i<2;i++)
+               {
+                  if(document.form1.elements[i].value=="")
+                  {
+                     alert("学号或密码为空");
+                     document.form1.elements[i].focus();
+                     return false;
+                  }
+               }
+               return true;
+            }
+        </script>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+	登录
+</button>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title">登陆</h4>
+          </div>
+          <div class="modal-body">
+            <div class="login" align="center">
+        <div class="message"><span class="muted">欢迎来到学社网</span></div>
+        <hr class="hr15">
+       <table style="margin-center">
+       	<tr>
+      		<td><span class="muted">账户:</span></td>
+          <td><input type="text" name="ID" class="form-control" placeholder="ID号" width="20px" value="admin"></td>
+        </tr>
+        <tr>
+        	<td></td>
+        	<td></td>
+        </tr>
+        <tr>
+        	<td><span class="muted">密码:</span></td>
+            <td><input type="password" name="password" class="form-control" placeholder="密码" width="20px" value="root"></td>
+        </tr>
+        <tr>
+	        <td><span class="muted">身份：</span></td>
+	        <td><span class="muted">学生</span>&nbsp;<input type="radio" value="1" name="identity" checked>&nbsp;&nbsp;管理员<input type="radio" value="0" name="identity"></td>
+        </tr>
+        </table>
+    	  <a class="btn btn-primary" href="back/index.html"><span class="muted">登陆</span></a>
+          <button class="btn btn-info" type="reset"><span class="muted">重置</span></button>
+    </div>
+          </div>
+          <div class="modal-footer">
+            <button data-dismiss="modal" class="btn btn-default" type="button" onclick="myCheck()">关闭</button>
+            <button class="btn btn-primary" type="button">提交</button>
+          </div>
+        </div>
+      </div>
+ 
+<div style="height:200px"></div>
+</body>
+</html>
